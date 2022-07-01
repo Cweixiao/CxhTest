@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.es.es_server4.model.dao.SpcSiteChangeMapper">
+  <resultMap id="BaseResultMap" type="com.es.es_server4.model.pojo.SpcSiteChange">
+    <constructor>
+      <arg column="TMS_SN" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="OBJ_ID" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="FULL_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="ABBR" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="STATION_TYPE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="STATION_TYPE_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="VOLTAGE_CLASS" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="VOLTAGE_CLASS_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="DSP_LEVEL" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="DSP_LEVEL_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="CONTAIN_COMMDEV" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="CONTAIN_COMMDEV_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="BEG_TIME" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="TIME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="PRINCIPAL" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="PHONE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="ADDR" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="POSTCODE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="INNER_PHONE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="SOURCE_OBJ_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="LONGITUDE" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="LATITUDE" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="LONGITUD_X" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="LATITUDE_Y" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="PAR_ZONE" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="ZONE_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="AUTHORITY_UNIT" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="AUTHORITY_UNIT_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="MAINTENANCE_DEPT" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="MAINTENANCE_DEPT_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="FATHER_MAINTENANCE_DEPT_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="PROPERTY_DEPT" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="PROPERTY_DEPT_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.es.es_server4.model.pojo.SpcSiteChange">
+    insert into V_SPC_SITE_CHANGE (TMS_SN, OBJ_ID, `NAME`, 
+      FULL_NAME, ABBR, STATION_TYPE, 
+      STATION_TYPE_NAME, VOLTAGE_CLASS, VOLTAGE_CLASS_NAME, 
+      DSP_LEVEL, DSP_LEVEL_NAME, CONTAIN_COMMDEV, 
+      CONTAIN_COMMDEV_NAME, BEG_TIME, `TIME`, 
+      PRINCIPAL, PHONE, ADDR, 
+      POSTCODE, INNER_PHONE, SOURCE_OBJ_ID, 
+      LONGITUDE, LATITUDE, LONGITUD_X, 
+      LATITUDE_Y, PAR_ZONE, ZONE_NAME, 
+      AUTHORITY_UNIT, AUTHORITY_UNIT_NAME, MAINTENANCE_DEPT, 
+      MAINTENANCE_DEPT_NAME, FATHER_MAINTENANCE_DEPT_NAME, 
+      PROPERTY_DEPT, PROPERTY_DEPT_NAME)
+    values (#{tmsSn,jdbcType=VARCHAR}, #{objId,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, 
+      #{fullName,jdbcType=VARCHAR}, #{abbr,jdbcType=VARCHAR}, #{stationType,jdbcType=VARCHAR}, 
+      #{stationTypeName,jdbcType=VARCHAR}, #{voltageClass,jdbcType=VARCHAR}, #{voltageClassName,jdbcType=VARCHAR}, 
+      #{dspLevel,jdbcType=VARCHAR}, #{dspLevelName,jdbcType=VARCHAR}, #{containCommdev,jdbcType=VARCHAR}, 
+      #{containCommdevName,jdbcType=VARCHAR}, #{begTime,jdbcType=TIMESTAMP}, #{time,jdbcType=VARCHAR}, 
+      #{principal,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{addr,jdbcType=VARCHAR}, 
+      #{postcode,jdbcType=VARCHAR}, #{innerPhone,jdbcType=VARCHAR}, #{sourceObjId,jdbcType=VARCHAR}, 
+      #{longitude,jdbcType=DECIMAL}, #{latitude,jdbcType=DECIMAL}, #{longitudX,jdbcType=DECIMAL}, 
+      #{latitudeY,jdbcType=DECIMAL}, #{parZone,jdbcType=CHAR}, #{zoneName,jdbcType=VARCHAR}, 
+      #{authorityUnit,jdbcType=VARCHAR}, #{authorityUnitName,jdbcType=VARCHAR}, #{maintenanceDept,jdbcType=VARCHAR}, 
+      #{maintenanceDeptName,jdbcType=VARCHAR}, #{fatherMaintenanceDeptName,jdbcType=VARCHAR}, 
+      #{propertyDept,jdbcType=VARCHAR}, #{propertyDeptName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.es.es_server4.model.pojo.SpcSiteChange">
+    insert into V_SPC_SITE_CHANGE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tmsSn != null">
+        TMS_SN,
+      </if>
+      <if test="objId != null">
+        OBJ_ID,
+      </if>
+      <if test="name != null">
+        `NAME`,
+      </if>
+      <if test="fullName != null">
+        FULL_NAME,
+      </if>
+      <if test="abbr != null">
+        ABBR,
+      </if>
+      <if test="stationType != null">
+        STATION_TYPE,
+      </if>
+      <if test="stationTypeName != null">
+        STATION_TYPE_NAME,
+      </if>
+      <if test="voltageClass != null">
+        VOLTAGE_CLASS,
+      </if>
+      <if test="voltageClassName != null">
+        VOLTAGE_CLASS_NAME,
+      </if>
+      <if test="dspLevel != null">
+        DSP_LEVEL,
+      </if>
+      <if test="dspLevelName != null">
+        DSP_LEVEL_NAME,
+      </if>
+      <if test="containCommdev != null">
+        CONTAIN_COMMDEV,
+      </if>
+      <if test="containCommdevName != null">
+        CONTAIN_COMMDEV_NAME,
+      </if>
+      <if test="begTime != null">
+        BEG_TIME,
+      </if>
+      <if test="time != null">
+        `TIME`,
+      </if>
+      <if test="principal != null">
+        PRINCIPAL,
+      </if>
+      <if test="phone != null">
+        PHONE,
+      </if>
+      <if test="addr != null">
+        ADDR,
+      </if>
+      <if test="postcode != null">
+        POSTCODE,
+      </if>
+      <if test="innerPhone != null">
+        INNER_PHONE,
+      </if>
+      <if test="sourceObjId != null">
+        SOURCE_OBJ_ID,
+      </if>
+      <if test="longitude != null">
+        LONGITUDE,
+      </if>
+      <if test="latitude != null">
+        LATITUDE,
+      </if>
+      <if test="longitudX != null">
+        LONGITUD_X,
+      </if>
+      <if test="latitudeY != null">
+        LATITUDE_Y,
+      </if>
+      <if test="parZone != null">
+        PAR_ZONE,
+      </if>
+      <if test="zoneName != null">
+        ZONE_NAME,
+      </if>
+      <if test="authorityUnit != null">
+        AUTHORITY_UNIT,
+      </if>
+      <if test="authorityUnitName != null">
+        AUTHORITY_UNIT_NAME,
+      </if>
+      <if test="maintenanceDept != null">
+        MAINTENANCE_DEPT,
+      </if>
+      <if test="maintenanceDeptName != null">
+        MAINTENANCE_DEPT_NAME,
+      </if>
+      <if test="fatherMaintenanceDeptName != null">
+        FATHER_MAINTENANCE_DEPT_NAME,
+      </if>
+      <if test="propertyDept != null">
+        PROPERTY_DEPT,
+      </if>
+      <if test="propertyDeptName != null">
+        PROPERTY_DEPT_NAME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tmsSn != null">
+        #{tmsSn,jdbcType=VARCHAR},
+      </if>
+      <if test="objId != null">
+        #{objId,jdbcType=CHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="fullName != null">
+        #{fullName,jdbcType=VARCHAR},
+      </if>
+      <if test="abbr != null">
+        #{abbr,jdbcType=VARCHAR},
+      </if>
+      <if test="stationType != null">
+        #{stationType,jdbcType=VARCHAR},
+      </if>
+      <if test="stationTypeName != null">
+        #{stationTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="voltageClass != null">
+        #{voltageClass,jdbcType=VARCHAR},
+      </if>
+      <if test="voltageClassName != null">
+        #{voltageClassName,jdbcType=VARCHAR},
+      </if>
+      <if test="dspLevel != null">
+        #{dspLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="dspLevelName != null">
+        #{dspLevelName,jdbcType=VARCHAR},
+      </if>
+      <if test="containCommdev != null">
+        #{containCommdev,jdbcType=VARCHAR},
+      </if>
+      <if test="containCommdevName != null">
+        #{containCommdevName,jdbcType=VARCHAR},
+      </if>
+      <if test="begTime != null">
+        #{begTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="principal != null">
+        #{principal,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="addr != null">
+        #{addr,jdbcType=VARCHAR},
+      </if>
+      <if test="postcode != null">
+        #{postcode,jdbcType=VARCHAR},
+      </if>
+      <if test="innerPhone != null">
+        #{innerPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="sourceObjId != null">
+        #{sourceObjId,jdbcType=VARCHAR},
+      </if>
+      <if test="longitude != null">
+        #{longitude,jdbcType=DECIMAL},
+      </if>
+      <if test="latitude != null">
+        #{latitude,jdbcType=DECIMAL},
+      </if>
+      <if test="longitudX != null">
+        #{longitudX,jdbcType=DECIMAL},
+      </if>
+      <if test="latitudeY != null">
+        #{latitudeY,jdbcType=DECIMAL},
+      </if>
+      <if test="parZone != null">
+        #{parZone,jdbcType=CHAR},
+      </if>
+      <if test="zoneName != null">
+        #{zoneName,jdbcType=VARCHAR},
+      </if>
+      <if test="authorityUnit != null">
+        #{authorityUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="authorityUnitName != null">
+        #{authorityUnitName,jdbcType=VARCHAR},
+      </if>
+      <if test="maintenanceDept != null">
+        #{maintenanceDept,jdbcType=VARCHAR},
+      </if>
+      <if test="maintenanceDeptName != null">
+        #{maintenanceDeptName,jdbcType=VARCHAR},
+      </if>
+      <if test="fatherMaintenanceDeptName != null">
+        #{fatherMaintenanceDeptName,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyDept != null">
+        #{propertyDept,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyDeptName != null">
+        #{propertyDeptName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

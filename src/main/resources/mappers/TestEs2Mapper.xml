@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.es.es_server4.model.dao.TestEs2Mapper">
+  <resultMap id="BaseResultMap" type="com.es.es_server4.model.pojo.TestEs2">
+    <constructor>
+      <idArg column="id" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="is_deleted" javaType="java.lang.Short" jdbcType="DECIMAL" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    "id", "name", "is_deleted"
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from TEST_ES2
+    where "id" = #{id,jdbcType=VARCHAR}
+  </select>
+    <select id="selectLogin" parameterType="map" resultType="com.es.es_server4.model.pojo.TestEs2">
+    select
+    <include refid="Base_Column_List"></include>
+    from TEST_ES2
+    where "id"=#{username,jdbcType=VARCHAR}
+    and "name"=#{password,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from TEST_ES2
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.es.es_server4.model.pojo.TestEs2">
+    insert into TEST_ES2 (id, `name`, is_deleted
+      )
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{isDeleted,jdbcType=DECIMAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.es.es_server4.model.pojo.TestEs2">
+    insert into TEST_ES2
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        "id",
+      </if>
+      <if test="name != null">
+        "name",
+      </if>
+      <if test="isDeleted != null">
+        "is_deleted",
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="isDeleted != null">
+        #{isDeleted,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.es.es_server4.model.pojo.TestEs2">
+    update TEST_ES2
+    <set>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="isDeleted != null">
+        "is_deleted" = #{isDeleted,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where "id" = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.es.es_server4.model.pojo.TestEs2">
+    update TEST_ES2
+    set `name` = #{name,jdbcType=VARCHAR},
+      is_deleted = #{isDeleted,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

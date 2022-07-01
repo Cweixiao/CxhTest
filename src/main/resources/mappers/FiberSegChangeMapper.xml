@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.es.es_server4.model.dao.FiberSegChangeMapper">
+  <resultMap id="BaseResultMap" type="com.es.es_server4.model.pojo.FiberSegChange">
+    <constructor>
+      <arg column="OBJ_ID" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="ABBR_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="FULL_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="PAR_FIBER" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="LINE_NUMBER" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="LINE_NUMBER_USED" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="LINE_NUMBER_FREE" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="LENGTH" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="BEG_TIME" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="RET_TIME" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="PRINCIPAL" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="PHONE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="POWER_LINE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="A_RESTYPE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="A_RESTYPE_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="A_RESOBJID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="A_RES_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="Z_RESTYPE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="Z_RESTYPE_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="Z_RESOBJID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="Z_RES_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="FIBER_TYPE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="FIBER_TYPE_DESC" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="IS_INSTATION" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="IS_INSTATION_DESC" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="VOLTAGE_CLASS" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="PRODUCER_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="PRODUCER_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="DSP_LEVEL" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="DSP_LEVEL_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="LAYING_MODE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="SERVICE_STATE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="PAR_ZONE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="PAR_ZONE_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="MAINTENANCE_DEPT" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="MAINTENANCE_DEPT_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="PROPERTY_DEPT" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="PROPERTY_DEPT_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="AUTHORITY_UNIT" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="AUTHORITY_UNIT_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="TECHTYPE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="DEP_KEEP" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="DEP_MANAGE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="ADDMETHOD" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="CHANGEMETHOD" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="COUNTRY" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="MANUYEAR" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="MANUMON" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="BARRY_BUZ_LEVEL" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="BARRY_BUZ_TYPE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="BARRY_BUZ_NUM" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="MODEL_TYPE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="ACROSS_TYPE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="POWER_LINE_PMS" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="SOURCE_OBJ_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="REMARK" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="SN" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.es.es_server4.model.pojo.FiberSegChange">
+    insert into V_FIBER_SEG_CHANGE (OBJ_ID, `NAME`, ABBR_NAME, 
+      FULL_NAME, PAR_FIBER, LINE_NUMBER, 
+      LINE_NUMBER_USED, LINE_NUMBER_FREE, `LENGTH`, 
+      BEG_TIME, RET_TIME, PRINCIPAL, 
+      PHONE, POWER_LINE, A_RESTYPE, 
+      A_RESTYPE_NAME, A_RESOBJID, A_RES_NAME, 
+      Z_RESTYPE, Z_RESTYPE_NAME, Z_RESOBJID, 
+      Z_RES_NAME, FIBER_TYPE, FIBER_TYPE_DESC, 
+      IS_INSTATION, IS_INSTATION_DESC, VOLTAGE_CLASS, 
+      PRODUCER_ID, PRODUCER_NAME, DSP_LEVEL, 
+      DSP_LEVEL_NAME, LAYING_MODE, SERVICE_STATE, 
+      PAR_ZONE, PAR_ZONE_NAME, MAINTENANCE_DEPT, 
+      MAINTENANCE_DEPT_NAME, PROPERTY_DEPT, PROPERTY_DEPT_NAME, 
+      AUTHORITY_UNIT, AUTHORITY_UNIT_NAME, TECHTYPE, 
+      DEP_KEEP, DEP_MANAGE, ADDMETHOD, 
+      CHANGEMETHOD, COUNTRY, MANUYEAR, 
+      MANUMON, BARRY_BUZ_LEVEL, BARRY_BUZ_TYPE, 
+      BARRY_BUZ_NUM, MODEL_TYPE, ACROSS_TYPE, 
+      POWER_LINE_PMS, SOURCE_OBJ_ID, REMARK, 
+      SN)
+    values (#{objId,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{abbrName,jdbcType=VARCHAR}, 
+      #{fullName,jdbcType=VARCHAR}, #{parFiber,jdbcType=CHAR}, #{lineNumber,jdbcType=DECIMAL}, 
+      #{lineNumberUsed,jdbcType=DECIMAL}, #{lineNumberFree,jdbcType=DECIMAL}, #{length,jdbcType=DECIMAL}, 
+      #{begTime,jdbcType=TIMESTAMP}, #{retTime,jdbcType=TIMESTAMP}, #{principal,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{powerLine,jdbcType=VARCHAR}, #{aRestype,jdbcType=VARCHAR}, 
+      #{aRestypeName,jdbcType=VARCHAR}, #{aResobjid,jdbcType=VARCHAR}, #{aResName,jdbcType=VARCHAR}, 
+      #{zRestype,jdbcType=VARCHAR}, #{zRestypeName,jdbcType=VARCHAR}, #{zResobjid,jdbcType=VARCHAR}, 
+      #{zResName,jdbcType=VARCHAR}, #{fiberType,jdbcType=VARCHAR}, #{fiberTypeDesc,jdbcType=VARCHAR}, 
+      #{isInstation,jdbcType=VARCHAR}, #{isInstationDesc,jdbcType=VARCHAR}, #{voltageClass,jdbcType=VARCHAR}, 
+      #{producerId,jdbcType=VARCHAR}, #{producerName,jdbcType=VARCHAR}, #{dspLevel,jdbcType=VARCHAR}, 
+      #{dspLevelName,jdbcType=VARCHAR}, #{layingMode,jdbcType=VARCHAR}, #{serviceState,jdbcType=VARCHAR}, 
+      #{parZone,jdbcType=VARCHAR}, #{parZoneName,jdbcType=VARCHAR}, #{maintenanceDept,jdbcType=VARCHAR}, 
+      #{maintenanceDeptName,jdbcType=VARCHAR}, #{propertyDept,jdbcType=VARCHAR}, #{propertyDeptName,jdbcType=VARCHAR}, 
+      #{authorityUnit,jdbcType=VARCHAR}, #{authorityUnitName,jdbcType=VARCHAR}, #{techtype,jdbcType=VARCHAR}, 
+      #{depKeep,jdbcType=VARCHAR}, #{depManage,jdbcType=VARCHAR}, #{addmethod,jdbcType=VARCHAR}, 
+      #{changemethod,jdbcType=VARCHAR}, #{country,jdbcType=VARCHAR}, #{manuyear,jdbcType=VARCHAR}, 
+      #{manumon,jdbcType=VARCHAR}, #{barryBuzLevel,jdbcType=VARCHAR}, #{barryBuzType,jdbcType=VARCHAR}, 
+      #{barryBuzNum,jdbcType=VARCHAR}, #{modelType,jdbcType=VARCHAR}, #{acrossType,jdbcType=VARCHAR}, 
+      #{powerLinePms,jdbcType=VARCHAR}, #{sourceObjId,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{sn,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.es.es_server4.model.pojo.FiberSegChange">
+    insert into V_FIBER_SEG_CHANGE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="objId != null">
+        OBJ_ID,
+      </if>
+      <if test="name != null">
+        `NAME`,
+      </if>
+      <if test="abbrName != null">
+        ABBR_NAME,
+      </if>
+      <if test="fullName != null">
+        FULL_NAME,
+      </if>
+      <if test="parFiber != null">
+        PAR_FIBER,
+      </if>
+      <if test="lineNumber != null">
+        LINE_NUMBER,
+      </if>
+      <if test="lineNumberUsed != null">
+        LINE_NUMBER_USED,
+      </if>
+      <if test="lineNumberFree != null">
+        LINE_NUMBER_FREE,
+      </if>
+      <if test="length != null">
+        `LENGTH`,
+      </if>
+      <if test="begTime != null">
+        BEG_TIME,
+      </if>
+      <if test="retTime != null">
+        RET_TIME,
+      </if>
+      <if test="principal != null">
+        PRINCIPAL,
+      </if>
+      <if test="phone != null">
+        PHONE,
+      </if>
+      <if test="powerLine != null">
+        POWER_LINE,
+      </if>
+      <if test="aRestype != null">
+        A_RESTYPE,
+      </if>
+      <if test="aRestypeName != null">
+        A_RESTYPE_NAME,
+      </if>
+      <if test="aResobjid != null">
+        A_RESOBJID,
+      </if>
+      <if test="aResName != null">
+        A_RES_NAME,
+      </if>
+      <if test="zRestype != null">
+        Z_RESTYPE,
+      </if>
+      <if test="zRestypeName != null">
+        Z_RESTYPE_NAME,
+      </if>
+      <if test="zResobjid != null">
+        Z_RESOBJID,
+      </if>
+      <if test="zResName != null">
+        Z_RES_NAME,
+      </if>
+      <if test="fiberType != null">
+        FIBER_TYPE,
+      </if>
+      <if test="fiberTypeDesc != null">
+        FIBER_TYPE_DESC,
+      </if>
+      <if test="isInstation != null">
+        IS_INSTATION,
+      </if>
+      <if test="isInstationDesc != null">
+        IS_INSTATION_DESC,
+      </if>
+      <if test="voltageClass != null">
+        VOLTAGE_CLASS,
+      </if>
+      <if test="producerId != null">
+        PRODUCER_ID,
+      </if>
+      <if test="producerName != null">
+        PRODUCER_NAME,
+      </if>
+      <if test="dspLevel != null">
+        DSP_LEVEL,
+      </if>
+      <if test="dspLevelName != null">
+        DSP_LEVEL_NAME,
+      </if>
+      <if test="layingMode != null">
+        LAYING_MODE,
+      </if>
+      <if test="serviceState != null">
+        SERVICE_STATE,
+      </if>
+      <if test="parZone != null">
+        PAR_ZONE,
+      </if>
+      <if test="parZoneName != null">
+        PAR_ZONE_NAME,
+      </if>
+      <if test="maintenanceDept != null">
+        MAINTENANCE_DEPT,
+      </if>
+      <if test="maintenanceDeptName != null">
+        MAINTENANCE_DEPT_NAME,
+      </if>
+      <if test="propertyDept != null">
+        PROPERTY_DEPT,
+      </if>
+      <if test="propertyDeptName != null">
+        PROPERTY_DEPT_NAME,
+      </if>
+      <if test="authorityUnit != null">
+        AUTHORITY_UNIT,
+      </if>
+      <if test="authorityUnitName != null">
+        AUTHORITY_UNIT_NAME,
+      </if>
+      <if test="techtype != null">
+        TECHTYPE,
+      </if>
+      <if test="depKeep != null">
+        DEP_KEEP,
+      </if>
+      <if test="depManage != null">
+        DEP_MANAGE,
+      </if>
+      <if test="addmethod != null">
+        ADDMETHOD,
+      </if>
+      <if test="changemethod != null">
+        CHANGEMETHOD,
+      </if>
+      <if test="country != null">
+        COUNTRY,
+      </if>
+      <if test="manuyear != null">
+        MANUYEAR,
+      </if>
+      <if test="manumon != null">
+        MANUMON,
+      </if>
+      <if test="barryBuzLevel != null">
+        BARRY_BUZ_LEVEL,
+      </if>
+      <if test="barryBuzType != null">
+        BARRY_BUZ_TYPE,
+      </if>
+      <if test="barryBuzNum != null">
+        BARRY_BUZ_NUM,
+      </if>
+      <if test="modelType != null">
+        MODEL_TYPE,
+      </if>
+      <if test="acrossType != null">
+        ACROSS_TYPE,
+      </if>
+      <if test="powerLinePms != null">
+        POWER_LINE_PMS,
+      </if>
+      <if test="sourceObjId != null">
+        SOURCE_OBJ_ID,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="sn != null">
+        SN,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="objId != null">
+        #{objId,jdbcType=CHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="abbrName != null">
+        #{abbrName,jdbcType=VARCHAR},
+      </if>
+      <if test="fullName != null">
+        #{fullName,jdbcType=VARCHAR},
+      </if>
+      <if test="parFiber != null">
+        #{parFiber,jdbcType=CHAR},
+      </if>
+      <if test="lineNumber != null">
+        #{lineNumber,jdbcType=DECIMAL},
+      </if>
+      <if test="lineNumberUsed != null">
+        #{lineNumberUsed,jdbcType=DECIMAL},
+      </if>
+      <if test="lineNumberFree != null">
+        #{lineNumberFree,jdbcType=DECIMAL},
+      </if>
+      <if test="length != null">
+        #{length,jdbcType=DECIMAL},
+      </if>
+      <if test="begTime != null">
+        #{begTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="retTime != null">
+        #{retTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="principal != null">
+        #{principal,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="powerLine != null">
+        #{powerLine,jdbcType=VARCHAR},
+      </if>
+      <if test="aRestype != null">
+        #{aRestype,jdbcType=VARCHAR},
+      </if>
+      <if test="aRestypeName != null">
+        #{aRestypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="aResobjid != null">
+        #{aResobjid,jdbcType=VARCHAR},
+      </if>
+      <if test="aResName != null">
+        #{aResName,jdbcType=VARCHAR},
+      </if>
+      <if test="zRestype != null">
+        #{zRestype,jdbcType=VARCHAR},
+      </if>
+      <if test="zRestypeName != null">
+        #{zRestypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="zResobjid != null">
+        #{zResobjid,jdbcType=VARCHAR},
+      </if>
+      <if test="zResName != null">
+        #{zResName,jdbcType=VARCHAR},
+      </if>
+      <if test="fiberType != null">
+        #{fiberType,jdbcType=VARCHAR},
+      </if>
+      <if test="fiberTypeDesc != null">
+        #{fiberTypeDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="isInstation != null">
+        #{isInstation,jdbcType=VARCHAR},
+      </if>
+      <if test="isInstationDesc != null">
+        #{isInstationDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="voltageClass != null">
+        #{voltageClass,jdbcType=VARCHAR},
+      </if>
+      <if test="producerId != null">
+        #{producerId,jdbcType=VARCHAR},
+      </if>
+      <if test="producerName != null">
+        #{producerName,jdbcType=VARCHAR},
+      </if>
+      <if test="dspLevel != null">
+        #{dspLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="dspLevelName != null">
+        #{dspLevelName,jdbcType=VARCHAR},
+      </if>
+      <if test="layingMode != null">
+        #{layingMode,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceState != null">
+        #{serviceState,jdbcType=VARCHAR},
+      </if>
+      <if test="parZone != null">
+        #{parZone,jdbcType=VARCHAR},
+      </if>
+      <if test="parZoneName != null">
+        #{parZoneName,jdbcType=VARCHAR},
+      </if>
+      <if test="maintenanceDept != null">
+        #{maintenanceDept,jdbcType=VARCHAR},
+      </if>
+      <if test="maintenanceDeptName != null">
+        #{maintenanceDeptName,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyDept != null">
+        #{propertyDept,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyDeptName != null">
+        #{propertyDeptName,jdbcType=VARCHAR},
+      </if>
+      <if test="authorityUnit != null">
+        #{authorityUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="authorityUnitName != null">
+        #{authorityUnitName,jdbcType=VARCHAR},
+      </if>
+      <if test="techtype != null">
+        #{techtype,jdbcType=VARCHAR},
+      </if>
+      <if test="depKeep != null">
+        #{depKeep,jdbcType=VARCHAR},
+      </if>
+      <if test="depManage != null">
+        #{depManage,jdbcType=VARCHAR},
+      </if>
+      <if test="addmethod != null">
+        #{addmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="changemethod != null">
+        #{changemethod,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null">
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="manuyear != null">
+        #{manuyear,jdbcType=VARCHAR},
+      </if>
+      <if test="manumon != null">
+        #{manumon,jdbcType=VARCHAR},
+      </if>
+      <if test="barryBuzLevel != null">
+        #{barryBuzLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="barryBuzType != null">
+        #{barryBuzType,jdbcType=VARCHAR},
+      </if>
+      <if test="barryBuzNum != null">
+        #{barryBuzNum,jdbcType=VARCHAR},
+      </if>
+      <if test="modelType != null">
+        #{modelType,jdbcType=VARCHAR},
+      </if>
+      <if test="acrossType != null">
+        #{acrossType,jdbcType=VARCHAR},
+      </if>
+      <if test="powerLinePms != null">
+        #{powerLinePms,jdbcType=VARCHAR},
+      </if>
+      <if test="sourceObjId != null">
+        #{sourceObjId,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="sn != null">
+        #{sn,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

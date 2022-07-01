@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.es.es_server4.dao.TEqpModuleMapper">
+  <resultMap id="BaseResultMap" type="com.es.es_server4.model.TEqpModule">
+    <!--@mbg.generated-->
+    <!--@Table T_EQP_MODULE-->
+    <id column="OBJ_ID" jdbcType="CHAR" property="objId" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="PAR_RACK" jdbcType="CHAR" property="parRack" />
+    <result column="MODULE_TYPE" jdbcType="VARCHAR" property="moduleType" />
+    <result column="TOTAL_ROW" jdbcType="DECIMAL" property="totalRow" />
+    <result column="TOTAL_COL" jdbcType="DECIMAL" property="totalCol" />
+    <result column="BEG_TIME" jdbcType="TIMESTAMP" property="begTime" />
+    <result column="RET_TIME" jdbcType="TIMESTAMP" property="retTime" />
+    <result column="SERVICE_STATE" jdbcType="VARCHAR" property="serviceState" />
+    <result column="PRINCIPAL" jdbcType="VARCHAR" property="principal" />
+    <result column="TELEPHONE" jdbcType="VARCHAR" property="telephone" />
+    <result column="FULL_NAME" jdbcType="VARCHAR" property="fullName" />
+    <result column="SN" jdbcType="VARCHAR" property="sn" />
+    <result column="CAPACITY" jdbcType="DECIMAL" property="capacity" />
+    <result column="MANUFACTURER" jdbcType="VARCHAR" property="manufacturer" />
+    <result column="ABBR" jdbcType="VARCHAR" property="abbr" />
+    <result column="START_U_NO" jdbcType="DECIMAL" property="startUNo" />
+    <result column="U_CAPACITY" jdbcType="DECIMAL" property="uCapacity" />
+    <result column="RACK_USED" jdbcType="DECIMAL" property="rackUsed" />
+    <result column="DIRECTION" jdbcType="VARCHAR" property="direction" />
+    <result column="PURPOSE" jdbcType="VARCHAR" property="purpose" />
+    <result column="MAINTENANCE_SITE" jdbcType="VARCHAR" property="maintenanceSite" />
+    <result column="TERM_SORT_TYPE" jdbcType="VARCHAR" property="termSortType" />
+    <result column="C_DISPLAY_SN" jdbcType="VARCHAR" property="cDisplaySn" />
+    <result column="K_CAPACITY" jdbcType="DECIMAL" property="kCapacity" />
+    <result column="START_K_NO" jdbcType="DECIMAL" property="startKNo" />
+    <result column="U_GRAPH_TYPE" jdbcType="VARCHAR" property="uGraphType" />
+    <result column="AUTHORITY_UNIT" jdbcType="VARCHAR" property="authorityUnit" />
+    <result column="PROPERTY_DEPT" jdbcType="VARCHAR" property="propertyDept" />
+    <result column="SOURCE_OBJ_ID" jdbcType="VARCHAR" property="sourceObjId" />
+    <result column="TMS_SN" jdbcType="VARCHAR" property="tmsSn" />
+    <result column="UPDATEPERSON" jdbcType="VARCHAR" property="updateperson" />
+    <result column="UPDATEDATE" jdbcType="TIMESTAMP" property="updatedate" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="MAINTENANCE_DEPT" jdbcType="VARCHAR" property="maintenanceDept" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    OBJ_ID, "NAME", PAR_RACK, MODULE_TYPE, TOTAL_ROW, TOTAL_COL, BEG_TIME, RET_TIME, 
+    SERVICE_STATE, PRINCIPAL, TELEPHONE, FULL_NAME, SN, CAPACITY, MANUFACTURER, ABBR, 
+    START_U_NO, U_CAPACITY, RACK_USED, DIRECTION, PURPOSE, MAINTENANCE_SITE, TERM_SORT_TYPE, 
+    C_DISPLAY_SN, K_CAPACITY, START_K_NO, U_GRAPH_TYPE, AUTHORITY_UNIT, PROPERTY_DEPT, 
+    SOURCE_OBJ_ID, TMS_SN, UPDATEPERSON, UPDATEDATE, REMARK, MAINTENANCE_DEPT
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from T_EQP_MODULE
+    where OBJ_ID = #{objId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--@mbg.generated-->
+    delete from T_EQP_MODULE
+    where OBJ_ID = #{objId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.es.es_server4.model.TEqpModule">
+    <!--@mbg.generated-->
+    insert into T_EQP_MODULE (OBJ_ID, "NAME", PAR_RACK, 
+      MODULE_TYPE, TOTAL_ROW, TOTAL_COL, 
+      BEG_TIME, RET_TIME, SERVICE_STATE, 
+      PRINCIPAL, TELEPHONE, FULL_NAME, 
+      SN, CAPACITY, MANUFACTURER, 
+      ABBR, START_U_NO, U_CAPACITY, 
+      RACK_USED, DIRECTION, PURPOSE, 
+      MAINTENANCE_SITE, TERM_SORT_TYPE, C_DISPLAY_SN, 
+      K_CAPACITY, START_K_NO, U_GRAPH_TYPE, 
+      AUTHORITY_UNIT, PROPERTY_DEPT, SOURCE_OBJ_ID, 
+      TMS_SN, UPDATEPERSON, UPDATEDATE, 
+      REMARK, MAINTENANCE_DEPT)
+    values (#{objId,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{parRack,jdbcType=CHAR}, 
+      #{moduleType,jdbcType=VARCHAR}, #{totalRow,jdbcType=DECIMAL}, #{totalCol,jdbcType=DECIMAL}, 
+      #{begTime,jdbcType=TIMESTAMP}, #{retTime,jdbcType=TIMESTAMP}, #{serviceState,jdbcType=VARCHAR}, 
+      #{principal,jdbcType=VARCHAR}, #{telephone,jdbcType=VARCHAR}, #{fullName,jdbcType=VARCHAR}, 
+      #{sn,jdbcType=VARCHAR}, #{capacity,jdbcType=DECIMAL}, #{manufacturer,jdbcType=VARCHAR}, 
+      #{abbr,jdbcType=VARCHAR}, #{startUNo,jdbcType=DECIMAL}, #{uCapacity,jdbcType=DECIMAL}, 
+      #{rackUsed,jdbcType=DECIMAL}, #{direction,jdbcType=VARCHAR}, #{purpose,jdbcType=VARCHAR}, 
+      #{maintenanceSite,jdbcType=VARCHAR}, #{termSortType,jdbcType=VARCHAR}, #{cDisplaySn,jdbcType=VARCHAR}, 
+      #{kCapacity,jdbcType=DECIMAL}, #{startKNo,jdbcType=DECIMAL}, #{uGraphType,jdbcType=VARCHAR}, 
+      #{authorityUnit,jdbcType=VARCHAR}, #{propertyDept,jdbcType=VARCHAR}, #{sourceObjId,jdbcType=VARCHAR}, 
+      #{tmsSn,jdbcType=VARCHAR}, #{updateperson,jdbcType=VARCHAR}, #{updatedate,jdbcType=TIMESTAMP}, 
+      #{remark,jdbcType=VARCHAR}, #{maintenanceDept,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.es.es_server4.model.TEqpModule">
+    <!--@mbg.generated-->
+    insert into T_EQP_MODULE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="objId != null">
+        OBJ_ID,
+      </if>
+      <if test="name != null">
+        "NAME",
+      </if>
+      <if test="parRack != null">
+        PAR_RACK,
+      </if>
+      <if test="moduleType != null">
+        MODULE_TYPE,
+      </if>
+      <if test="totalRow != null">
+        TOTAL_ROW,
+      </if>
+      <if test="totalCol != null">
+        TOTAL_COL,
+      </if>
+      <if test="begTime != null">
+        BEG_TIME,
+      </if>
+      <if test="retTime != null">
+        RET_TIME,
+      </if>
+      <if test="serviceState != null">
+        SERVICE_STATE,
+      </if>
+      <if test="principal != null">
+        PRINCIPAL,
+      </if>
+      <if test="telephone != null">
+        TELEPHONE,
+      </if>
+      <if test="fullName != null">
+        FULL_NAME,
+      </if>
+      <if test="sn != null">
+        SN,
+      </if>
+      <if test="capacity != null">
+        CAPACITY,
+      </if>
+      <if test="manufacturer != null">
+        MANUFACTURER,
+      </if>
+      <if test="abbr != null">
+        ABBR,
+      </if>
+      <if test="startUNo != null">
+        START_U_NO,
+      </if>
+      <if test="uCapacity != null">
+        U_CAPACITY,
+      </if>
+      <if test="rackUsed != null">
+        RACK_USED,
+      </if>
+      <if test="direction != null">
+        DIRECTION,
+      </if>
+      <if test="purpose != null">
+        PURPOSE,
+      </if>
+      <if test="maintenanceSite != null">
+        MAINTENANCE_SITE,
+      </if>
+      <if test="termSortType != null">
+        TERM_SORT_TYPE,
+      </if>
+      <if test="cDisplaySn != null">
+        C_DISPLAY_SN,
+      </if>
+      <if test="kCapacity != null">
+        K_CAPACITY,
+      </if>
+      <if test="startKNo != null">
+        START_K_NO,
+      </if>
+      <if test="uGraphType != null">
+        U_GRAPH_TYPE,
+      </if>
+      <if test="authorityUnit != null">
+        AUTHORITY_UNIT,
+      </if>
+      <if test="propertyDept != null">
+        PROPERTY_DEPT,
+      </if>
+      <if test="sourceObjId != null">
+        SOURCE_OBJ_ID,
+      </if>
+      <if test="tmsSn != null">
+        TMS_SN,
+      </if>
+      <if test="updateperson != null">
+        UPDATEPERSON,
+      </if>
+      <if test="updatedate != null">
+        UPDATEDATE,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="maintenanceDept != null">
+        MAINTENANCE_DEPT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="objId != null">
+        #{objId,jdbcType=CHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="parRack != null">
+        #{parRack,jdbcType=CHAR},
+      </if>
+      <if test="moduleType != null">
+        #{moduleType,jdbcType=VARCHAR},
+      </if>
+      <if test="totalRow != null">
+        #{totalRow,jdbcType=DECIMAL},
+      </if>
+      <if test="totalCol != null">
+        #{totalCol,jdbcType=DECIMAL},
+      </if>
+      <if test="begTime != null">
+        #{begTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="retTime != null">
+        #{retTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="serviceState != null">
+        #{serviceState,jdbcType=VARCHAR},
+      </if>
+      <if test="principal != null">
+        #{principal,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null">
+        #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="fullName != null">
+        #{fullName,jdbcType=VARCHAR},
+      </if>
+      <if test="sn != null">
+        #{sn,jdbcType=VARCHAR},
+      </if>
+      <if test="capacity != null">
+        #{capacity,jdbcType=DECIMAL},
+      </if>
+      <if test="manufacturer != null">
+        #{manufacturer,jdbcType=VARCHAR},
+      </if>
+      <if test="abbr != null">
+        #{abbr,jdbcType=VARCHAR},
+      </if>
+      <if test="startUNo != null">
+        #{startUNo,jdbcType=DECIMAL},
+      </if>
+      <if test="uCapacity != null">
+        #{uCapacity,jdbcType=DECIMAL},
+      </if>
+      <if test="rackUsed != null">
+        #{rackUsed,jdbcType=DECIMAL},
+      </if>
+      <if test="direction != null">
+        #{direction,jdbcType=VARCHAR},
+      </if>
+      <if test="purpose != null">
+        #{purpose,jdbcType=VARCHAR},
+      </if>
+      <if test="maintenanceSite != null">
+        #{maintenanceSite,jdbcType=VARCHAR},
+      </if>
+      <if test="termSortType != null">
+        #{termSortType,jdbcType=VARCHAR},
+      </if>
+      <if test="cDisplaySn != null">
+        #{cDisplaySn,jdbcType=VARCHAR},
+      </if>
+      <if test="kCapacity != null">
+        #{kCapacity,jdbcType=DECIMAL},
+      </if>
+      <if test="startKNo != null">
+        #{startKNo,jdbcType=DECIMAL},
+      </if>
+      <if test="uGraphType != null">
+        #{uGraphType,jdbcType=VARCHAR},
+      </if>
+      <if test="authorityUnit != null">
+        #{authorityUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyDept != null">
+        #{propertyDept,jdbcType=VARCHAR},
+      </if>
+      <if test="sourceObjId != null">
+        #{sourceObjId,jdbcType=VARCHAR},
+      </if>
+      <if test="tmsSn != null">
+        #{tmsSn,jdbcType=VARCHAR},
+      </if>
+      <if test="updateperson != null">
+        #{updateperson,jdbcType=VARCHAR},
+      </if>
+      <if test="updatedate != null">
+        #{updatedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="maintenanceDept != null">
+        #{maintenanceDept,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.es.es_server4.model.TEqpModule">
+    <!--@mbg.generated-->
+    update T_EQP_MODULE
+    <set>
+      <if test="name != null">
+        "NAME" = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="parRack != null">
+        PAR_RACK = #{parRack,jdbcType=CHAR},
+      </if>
+      <if test="moduleType != null">
+        MODULE_TYPE = #{moduleType,jdbcType=VARCHAR},
+      </if>
+      <if test="totalRow != null">
+        TOTAL_ROW = #{totalRow,jdbcType=DECIMAL},
+      </if>
+      <if test="totalCol != null">
+        TOTAL_COL = #{totalCol,jdbcType=DECIMAL},
+      </if>
+      <if test="begTime != null">
+        BEG_TIME = #{begTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="retTime != null">
+        RET_TIME = #{retTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="serviceState != null">
+        SERVICE_STATE = #{serviceState,jdbcType=VARCHAR},
+      </if>
+      <if test="principal != null">
+        PRINCIPAL = #{principal,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null">
+        TELEPHONE = #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="fullName != null">
+        FULL_NAME = #{fullName,jdbcType=VARCHAR},
+      </if>
+      <if test="sn != null">
+        SN = #{sn,jdbcType=VARCHAR},
+      </if>
+      <if test="capacity != null">
+        CAPACITY = #{capacity,jdbcType=DECIMAL},
+      </if>
+      <if test="manufacturer != null">
+        MANUFACTURER = #{manufacturer,jdbcType=VARCHAR},
+      </if>
+      <if test="abbr != null">
+        ABBR = #{abbr,jdbcType=VARCHAR},
+      </if>
+      <if test="startUNo != null">
+        START_U_NO = #{startUNo,jdbcType=DECIMAL},
+      </if>
+      <if test="uCapacity != null">
+        U_CAPACITY = #{uCapacity,jdbcType=DECIMAL},
+      </if>
+      <if test="rackUsed != null">
+        RACK_USED = #{rackUsed,jdbcType=DECIMAL},
+      </if>
+      <if test="direction != null">
+        DIRECTION = #{direction,jdbcType=VARCHAR},
+      </if>
+      <if test="purpose != null">
+        PURPOSE = #{purpose,jdbcType=VARCHAR},
+      </if>
+      <if test="maintenanceSite != null">
+        MAINTENANCE_SITE = #{maintenanceSite,jdbcType=VARCHAR},
+      </if>
+      <if test="termSortType != null">
+        TERM_SORT_TYPE = #{termSortType,jdbcType=VARCHAR},
+      </if>
+      <if test="cDisplaySn != null">
+        C_DISPLAY_SN = #{cDisplaySn,jdbcType=VARCHAR},
+      </if>
+      <if test="kCapacity != null">
+        K_CAPACITY = #{kCapacity,jdbcType=DECIMAL},
+      </if>
+      <if test="startKNo != null">
+        START_K_NO = #{startKNo,jdbcType=DECIMAL},
+      </if>
+      <if test="uGraphType != null">
+        U_GRAPH_TYPE = #{uGraphType,jdbcType=VARCHAR},
+      </if>
+      <if test="authorityUnit != null">
+        AUTHORITY_UNIT = #{authorityUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyDept != null">
+        PROPERTY_DEPT = #{propertyDept,jdbcType=VARCHAR},
+      </if>
+      <if test="sourceObjId != null">
+        SOURCE_OBJ_ID = #{sourceObjId,jdbcType=VARCHAR},
+      </if>
+      <if test="tmsSn != null">
+        TMS_SN = #{tmsSn,jdbcType=VARCHAR},
+      </if>
+      <if test="updateperson != null">
+        UPDATEPERSON = #{updateperson,jdbcType=VARCHAR},
+      </if>
+      <if test="updatedate != null">
+        UPDATEDATE = #{updatedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="maintenanceDept != null">
+        MAINTENANCE_DEPT = #{maintenanceDept,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OBJ_ID = #{objId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.es.es_server4.model.TEqpModule">
+    <!--@mbg.generated-->
+    update T_EQP_MODULE
+    set "NAME" = #{name,jdbcType=VARCHAR},
+      PAR_RACK = #{parRack,jdbcType=CHAR},
+      MODULE_TYPE = #{moduleType,jdbcType=VARCHAR},
+      TOTAL_ROW = #{totalRow,jdbcType=DECIMAL},
+      TOTAL_COL = #{totalCol,jdbcType=DECIMAL},
+      BEG_TIME = #{begTime,jdbcType=TIMESTAMP},
+      RET_TIME = #{retTime,jdbcType=TIMESTAMP},
+      SERVICE_STATE = #{serviceState,jdbcType=VARCHAR},
+      PRINCIPAL = #{principal,jdbcType=VARCHAR},
+      TELEPHONE = #{telephone,jdbcType=VARCHAR},
+      FULL_NAME = #{fullName,jdbcType=VARCHAR},
+      SN = #{sn,jdbcType=VARCHAR},
+      CAPACITY = #{capacity,jdbcType=DECIMAL},
+      MANUFACTURER = #{manufacturer,jdbcType=VARCHAR},
+      ABBR = #{abbr,jdbcType=VARCHAR},
+      START_U_NO = #{startUNo,jdbcType=DECIMAL},
+      U_CAPACITY = #{uCapacity,jdbcType=DECIMAL},
+      RACK_USED = #{rackUsed,jdbcType=DECIMAL},
+      DIRECTION = #{direction,jdbcType=VARCHAR},
+      PURPOSE = #{purpose,jdbcType=VARCHAR},
+      MAINTENANCE_SITE = #{maintenanceSite,jdbcType=VARCHAR},
+      TERM_SORT_TYPE = #{termSortType,jdbcType=VARCHAR},
+      C_DISPLAY_SN = #{cDisplaySn,jdbcType=VARCHAR},
+      K_CAPACITY = #{kCapacity,jdbcType=DECIMAL},
+      START_K_NO = #{startKNo,jdbcType=DECIMAL},
+      U_GRAPH_TYPE = #{uGraphType,jdbcType=VARCHAR},
+      AUTHORITY_UNIT = #{authorityUnit,jdbcType=VARCHAR},
+      PROPERTY_DEPT = #{propertyDept,jdbcType=VARCHAR},
+      SOURCE_OBJ_ID = #{sourceObjId,jdbcType=VARCHAR},
+      TMS_SN = #{tmsSn,jdbcType=VARCHAR},
+      UPDATEPERSON = #{updateperson,jdbcType=VARCHAR},
+      UPDATEDATE = #{updatedate,jdbcType=TIMESTAMP},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      MAINTENANCE_DEPT = #{maintenanceDept,jdbcType=VARCHAR}
+    where OBJ_ID = #{objId,jdbcType=CHAR}
+  </update>
+</mapper>

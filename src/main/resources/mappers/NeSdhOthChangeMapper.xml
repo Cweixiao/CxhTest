@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.es.es_server4.model.dao.NeSdhOthChangeMapper">
+  <resultMap id="BaseResultMap" type="com.es.es_server4.model.pojo.NeSdhOthChange">
+    <constructor>
+      <arg column="OBJ_ID" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="FULL_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="ABBR" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="DEV_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="EMS_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="EMS_USERLABEL" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="EMS_VERSION" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="DISPLAY_SN" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="BEG_TIME" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="RET_TIME" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="RUNNING_TIME" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="PRINCIPAL" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="TELEPHONE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="SUPPORTED_RATES" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="UP_NE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="IS_CONTAIN_SUB" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="TECH_TYPE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="TECHTYPE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="ISMAINTENANCE" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="IS_VIRTUAL" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="IS_VIRTUAL_DESC" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="SYS_ID" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="SYS_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="DEV_TYPE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="DEV_TYPE_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="EQP_TYPE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="EQUIP_TYPE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="PRODUCER_ID" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="PRODUCER_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="PAR_STATION" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="PAR_STATION_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="PAR_ROOM" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="PAR_ROOM_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="MAINTENANCE_DEPT" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="MAINTENANCE_DEPT_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="PROPERTY_DEPT" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="PROPERTY_DEPT_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="AUTHORITY_UNIT" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="AUTHORITY_UNIT_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="SERVICE_STATE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="SERVICE_STATE_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="DSP_LEVEL" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="DSP_LEVEL_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="COUNTRY" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="MANUYEAR" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="MANUMON" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="SOURCE_OBJ_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="SUBNET_ID" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="REMARK" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.es.es_server4.model.pojo.NeSdhOthChange">
+    insert into V_NE_SDH_OTN_CHANGE (OBJ_ID, `NAME`, FULL_NAME, 
+      ABBR, DEV_NAME, EMS_NAME, 
+      EMS_USERLABEL, EMS_VERSION, DISPLAY_SN, 
+      BEG_TIME, RET_TIME, RUNNING_TIME, 
+      PRINCIPAL, TELEPHONE, SUPPORTED_RATES, 
+      UP_NE, IS_CONTAIN_SUB, TECH_TYPE, 
+      TECHTYPE, ISMAINTENANCE, IS_VIRTUAL, 
+      IS_VIRTUAL_DESC, SYS_ID, SYS_NAME, 
+      DEV_TYPE, DEV_TYPE_NAME, EQP_TYPE, 
+      EQUIP_TYPE, PRODUCER_ID, PRODUCER_NAME, 
+      PAR_STATION, PAR_STATION_NAME, PAR_ROOM, 
+      PAR_ROOM_NAME, MAINTENANCE_DEPT, MAINTENANCE_DEPT_NAME, 
+      PROPERTY_DEPT, PROPERTY_DEPT_NAME, AUTHORITY_UNIT, 
+      AUTHORITY_UNIT_NAME, SERVICE_STATE, SERVICE_STATE_NAME, 
+      DSP_LEVEL, DSP_LEVEL_NAME, COUNTRY, 
+      MANUYEAR, MANUMON, SOURCE_OBJ_ID, 
+      SUBNET_ID, REMARK)
+    values (#{objId,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{fullName,jdbcType=VARCHAR}, 
+      #{abbr,jdbcType=VARCHAR}, #{devName,jdbcType=VARCHAR}, #{emsName,jdbcType=VARCHAR}, 
+      #{emsUserlabel,jdbcType=VARCHAR}, #{emsVersion,jdbcType=VARCHAR}, #{displaySn,jdbcType=VARCHAR}, 
+      #{begTime,jdbcType=TIMESTAMP}, #{retTime,jdbcType=TIMESTAMP}, #{runningTime,jdbcType=TIMESTAMP}, 
+      #{principal,jdbcType=VARCHAR}, #{telephone,jdbcType=VARCHAR}, #{supportedRates,jdbcType=VARCHAR}, 
+      #{upNe,jdbcType=VARCHAR}, #{isContainSub,jdbcType=DECIMAL}, #{techType,jdbcType=VARCHAR}, 
+      #{techtype,jdbcType=VARCHAR}, #{ismaintenance,jdbcType=CHAR}, #{isVirtual,jdbcType=VARCHAR}, 
+      #{isVirtualDesc,jdbcType=VARCHAR}, #{sysId,jdbcType=CHAR}, #{sysName,jdbcType=VARCHAR}, 
+      #{devType,jdbcType=VARCHAR}, #{devTypeName,jdbcType=VARCHAR}, #{eqpType,jdbcType=VARCHAR}, 
+      #{equipType,jdbcType=VARCHAR}, #{producerId,jdbcType=CHAR}, #{producerName,jdbcType=VARCHAR}, 
+      #{parStation,jdbcType=CHAR}, #{parStationName,jdbcType=VARCHAR}, #{parRoom,jdbcType=CHAR}, 
+      #{parRoomName,jdbcType=VARCHAR}, #{maintenanceDept,jdbcType=VARCHAR}, #{maintenanceDeptName,jdbcType=VARCHAR}, 
+      #{propertyDept,jdbcType=VARCHAR}, #{propertyDeptName,jdbcType=VARCHAR}, #{authorityUnit,jdbcType=VARCHAR}, 
+      #{authorityUnitName,jdbcType=VARCHAR}, #{serviceState,jdbcType=VARCHAR}, #{serviceStateName,jdbcType=VARCHAR}, 
+      #{dspLevel,jdbcType=VARCHAR}, #{dspLevelName,jdbcType=VARCHAR}, #{country,jdbcType=VARCHAR}, 
+      #{manuyear,jdbcType=VARCHAR}, #{manumon,jdbcType=VARCHAR}, #{sourceObjId,jdbcType=VARCHAR}, 
+      #{subnetId,jdbcType=CHAR}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.es.es_server4.model.pojo.NeSdhOthChange">
+    insert into V_NE_SDH_OTN_CHANGE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="objId != null">
+        OBJ_ID,
+      </if>
+      <if test="name != null">
+        `NAME`,
+      </if>
+      <if test="fullName != null">
+        FULL_NAME,
+      </if>
+      <if test="abbr != null">
+        ABBR,
+      </if>
+      <if test="devName != null">
+        DEV_NAME,
+      </if>
+      <if test="emsName != null">
+        EMS_NAME,
+      </if>
+      <if test="emsUserlabel != null">
+        EMS_USERLABEL,
+      </if>
+      <if test="emsVersion != null">
+        EMS_VERSION,
+      </if>
+      <if test="displaySn != null">
+        DISPLAY_SN,
+      </if>
+      <if test="begTime != null">
+        BEG_TIME,
+      </if>
+      <if test="retTime != null">
+        RET_TIME,
+      </if>
+      <if test="runningTime != null">
+        RUNNING_TIME,
+      </if>
+      <if test="principal != null">
+        PRINCIPAL,
+      </if>
+      <if test="telephone != null">
+        TELEPHONE,
+      </if>
+      <if test="supportedRates != null">
+        SUPPORTED_RATES,
+      </if>
+      <if test="upNe != null">
+        UP_NE,
+      </if>
+      <if test="isContainSub != null">
+        IS_CONTAIN_SUB,
+      </if>
+      <if test="techType != null">
+        TECH_TYPE,
+      </if>
+      <if test="techtype != null">
+        TECHTYPE,
+      </if>
+      <if test="ismaintenance != null">
+        ISMAINTENANCE,
+      </if>
+      <if test="isVirtual != null">
+        IS_VIRTUAL,
+      </if>
+      <if test="isVirtualDesc != null">
+        IS_VIRTUAL_DESC,
+      </if>
+      <if test="sysId != null">
+        SYS_ID,
+      </if>
+      <if test="sysName != null">
+        SYS_NAME,
+      </if>
+      <if test="devType != null">
+        DEV_TYPE,
+      </if>
+      <if test="devTypeName != null">
+        DEV_TYPE_NAME,
+      </if>
+      <if test="eqpType != null">
+        EQP_TYPE,
+      </if>
+      <if test="equipType != null">
+        EQUIP_TYPE,
+      </if>
+      <if test="producerId != null">
+        PRODUCER_ID,
+      </if>
+      <if test="producerName != null">
+        PRODUCER_NAME,
+      </if>
+      <if test="parStation != null">
+        PAR_STATION,
+      </if>
+      <if test="parStationName != null">
+        PAR_STATION_NAME,
+      </if>
+      <if test="parRoom != null">
+        PAR_ROOM,
+      </if>
+      <if test="parRoomName != null">
+        PAR_ROOM_NAME,
+      </if>
+      <if test="maintenanceDept != null">
+        MAINTENANCE_DEPT,
+      </if>
+      <if test="maintenanceDeptName != null">
+        MAINTENANCE_DEPT_NAME,
+      </if>
+      <if test="propertyDept != null">
+        PROPERTY_DEPT,
+      </if>
+      <if test="propertyDeptName != null">
+        PROPERTY_DEPT_NAME,
+      </if>
+      <if test="authorityUnit != null">
+        AUTHORITY_UNIT,
+      </if>
+      <if test="authorityUnitName != null">
+        AUTHORITY_UNIT_NAME,
+      </if>
+      <if test="serviceState != null">
+        SERVICE_STATE,
+      </if>
+      <if test="serviceStateName != null">
+        SERVICE_STATE_NAME,
+      </if>
+      <if test="dspLevel != null">
+        DSP_LEVEL,
+      </if>
+      <if test="dspLevelName != null">
+        DSP_LEVEL_NAME,
+      </if>
+      <if test="country != null">
+        COUNTRY,
+      </if>
+      <if test="manuyear != null">
+        MANUYEAR,
+      </if>
+      <if test="manumon != null">
+        MANUMON,
+      </if>
+      <if test="sourceObjId != null">
+        SOURCE_OBJ_ID,
+      </if>
+      <if test="subnetId != null">
+        SUBNET_ID,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="objId != null">
+        #{objId,jdbcType=CHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="fullName != null">
+        #{fullName,jdbcType=VARCHAR},
+      </if>
+      <if test="abbr != null">
+        #{abbr,jdbcType=VARCHAR},
+      </if>
+      <if test="devName != null">
+        #{devName,jdbcType=VARCHAR},
+      </if>
+      <if test="emsName != null">
+        #{emsName,jdbcType=VARCHAR},
+      </if>
+      <if test="emsUserlabel != null">
+        #{emsUserlabel,jdbcType=VARCHAR},
+      </if>
+      <if test="emsVersion != null">
+        #{emsVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="displaySn != null">
+        #{displaySn,jdbcType=VARCHAR},
+      </if>
+      <if test="begTime != null">
+        #{begTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="retTime != null">
+        #{retTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="runningTime != null">
+        #{runningTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="principal != null">
+        #{principal,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null">
+        #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="supportedRates != null">
+        #{supportedRates,jdbcType=VARCHAR},
+      </if>
+      <if test="upNe != null">
+        #{upNe,jdbcType=VARCHAR},
+      </if>
+      <if test="isContainSub != null">
+        #{isContainSub,jdbcType=DECIMAL},
+      </if>
+      <if test="techType != null">
+        #{techType,jdbcType=VARCHAR},
+      </if>
+      <if test="techtype != null">
+        #{techtype,jdbcType=VARCHAR},
+      </if>
+      <if test="ismaintenance != null">
+        #{ismaintenance,jdbcType=CHAR},
+      </if>
+      <if test="isVirtual != null">
+        #{isVirtual,jdbcType=VARCHAR},
+      </if>
+      <if test="isVirtualDesc != null">
+        #{isVirtualDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="sysId != null">
+        #{sysId,jdbcType=CHAR},
+      </if>
+      <if test="sysName != null">
+        #{sysName,jdbcType=VARCHAR},
+      </if>
+      <if test="devType != null">
+        #{devType,jdbcType=VARCHAR},
+      </if>
+      <if test="devTypeName != null">
+        #{devTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="eqpType != null">
+        #{eqpType,jdbcType=VARCHAR},
+      </if>
+      <if test="equipType != null">
+        #{equipType,jdbcType=VARCHAR},
+      </if>
+      <if test="producerId != null">
+        #{producerId,jdbcType=CHAR},
+      </if>
+      <if test="producerName != null">
+        #{producerName,jdbcType=VARCHAR},
+      </if>
+      <if test="parStation != null">
+        #{parStation,jdbcType=CHAR},
+      </if>
+      <if test="parStationName != null">
+        #{parStationName,jdbcType=VARCHAR},
+      </if>
+      <if test="parRoom != null">
+        #{parRoom,jdbcType=CHAR},
+      </if>
+      <if test="parRoomName != null">
+        #{parRoomName,jdbcType=VARCHAR},
+      </if>
+      <if test="maintenanceDept != null">
+        #{maintenanceDept,jdbcType=VARCHAR},
+      </if>
+      <if test="maintenanceDeptName != null">
+        #{maintenanceDeptName,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyDept != null">
+        #{propertyDept,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyDeptName != null">
+        #{propertyDeptName,jdbcType=VARCHAR},
+      </if>
+      <if test="authorityUnit != null">
+        #{authorityUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="authorityUnitName != null">
+        #{authorityUnitName,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceState != null">
+        #{serviceState,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceStateName != null">
+        #{serviceStateName,jdbcType=VARCHAR},
+      </if>
+      <if test="dspLevel != null">
+        #{dspLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="dspLevelName != null">
+        #{dspLevelName,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null">
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="manuyear != null">
+        #{manuyear,jdbcType=VARCHAR},
+      </if>
+      <if test="manumon != null">
+        #{manumon,jdbcType=VARCHAR},
+      </if>
+      <if test="sourceObjId != null">
+        #{sourceObjId,jdbcType=VARCHAR},
+      </if>
+      <if test="subnetId != null">
+        #{subnetId,jdbcType=CHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
